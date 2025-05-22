@@ -4,7 +4,7 @@ import queryrouter from './routes/queryRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+console.log("server.js is executing");  
 app.use(express.json());
 app.use('/api/query', queryrouter);
 
