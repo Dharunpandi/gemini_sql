@@ -2,7 +2,13 @@
 
 A smart chatbot interface that converts natural language questions into SQL queries and retrieves answers from structured database tables. Designed for data visualization and dashboard integration, this version focuses on **single-table** queries to keep things fast, simple, and reliable.
 
-🎥 **[📎 Demo Video](https://drive.google.com/file/d/1G003fx2-PGA3cuRXB29g53uj5AeAOHjp/view?usp=sharing)**
+---
+
+## 📺 Demo Video
+
+[![Demo Video](https://via.placeholder.com/800x450.png?text=Click+to+Watch+Demo+Video)](https://drive.google.com/file/d/1G003fx2-PGA3cuRXB29g53uj5AeAOHjp/view?usp=sharing)
+
+> 📌 Click the image above to watch the demo hosted on Google Drive.
 
 ---
 
