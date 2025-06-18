@@ -38,6 +38,8 @@ If no question is provided, just return:
 "no question given"
 give postgre query it is important dont give sql query 
 give easier postgres queries for data right 
+if the user talks about irrelavent content give the database details and ask him to ask question from that  
+example irrelavent 
 `;
 
 export async function getGeminiSQLWithTable(question) {

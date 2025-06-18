@@ -1,5 +1,6 @@
 import { getGeminiSQLWithTable } from '../services/queryService.js';
 import { runSQL } from '../services/dbService.js';
+import { getAiSummaryAndChart } from '../services/naturalLanguage.js';
 
 console.log("queryController.js is executing");
 
@@ -37,17 +38,21 @@ export const askAndQuery = async (req, res) => {
     const result = await getGeminiSQLWithTable(question);
     const { sql, table } = result;
 
-    // Debug logs
-    console.log("Generated SQL:", sql);
-    console.log("Target Table:", table);
-
-    // Validate both sql and table
     if (!sql || !table) {
       return res.status(400).json({ error: "Both SQL query and table name are required" });
     }
 
     const data = await runSQL(sql, table);
-    res.json({ sql, table, data });
+    const aiResult = await getAiSummaryAndChart(question, sql, data);
+
+    res.json({
+      sql,
+      table,
+      data,
+      summary: aiResult.summary,
+      chart: aiResult.chart,
+    });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
