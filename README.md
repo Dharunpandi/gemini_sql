@@ -1,102 +1,103 @@
 # 🧠 SQL Chatbot — Natural Language to SQL Querying Agent
 
-A smart chatbot interface that converts natural language questions into SQL queries and retrieves answers from structured database tables. Designed for data visualization and dashboard integration, this version focuses on **single-table** queries to keep things fast, simple, and reliable.
+A smart, production-ready chatbot that translates natural language into SQL queries and retrieves accurate results from structured tables. Designed for integration into dashboards or analytics platforms, it supports fast and reliable single-table queries — perfect for business users and data analysts.
 
 ---
 
-## 📺 Demo Video
+## 📺 Demo
 
-[![Demo Video](https://via.placeholder.com/800x450.png?text=Click+to+Watch+Demo+Video)](https://drive.google.com/file/d/1G003fx2-PGA3cuRXB29g53uj5AeAOHjp/view?usp=sharing)
+<img src="example.png" alt="Demo Preview" width="100%"/>
 
-> 📌 Click the image above to watch the demo hosted on Google Drive.
+> 🔗 [Click here to view full demo](https://drive.google.com/file/d/1G003fx2-PGA3cuRXB29g53uj5AeAOHjp/view?usp=sharing)
 
 ---
 
-## 📂 Tables Used
+## 📊 Database Tables
 
-The agent works with the following **three** tables:
+The agent currently supports the following **three structured tables**:
 
-### 🔸 `prods`
-| Column       | Description               |
+### `prods` — Product Information
+| Column       | Description               |
 |--------------|---------------------------|
-| `pid`        | Product ID (Primary Key)  |
-| `name`       | Product name              |
-| `categ`      | Product category          |
+| `pid`        | Product ID (Primary Key)  |
+| `name`       | Product name              |
+| `categ`      | Product category          |
 | `cost_price` | Cost price of the product |
 
-### 🔸 `customer`
-| Column     | Description                   |
+### `customer` — Customer Data
+| Column     | Description                   |
 |------------|-------------------------------|
-| `cid`      | Customer ID (Primary Key)     |
-| `name`     | Customer name                 |
-| `joint_dt` | Date the customer joined      |
-| `typ`      | Customer type (e.g., Premium) |
+| `cid`      | Customer ID (Primary Key)     |
+| `name`     | Customer name                 |
+| `joint_dt` | Date the customer joined      |
+| `typ`      | Customer type (e.g., Premium) |
 
-### 🔸 `sales`
-| Column         | Description                          |
+### `sales` — Sales Records
+| Column         | Description                          |
 |----------------|--------------------------------------|
-| `id`           | Sales record ID (Primary Key)        |
-| `product_name` | Name of the product sold             |
-| `revenue`      | Revenue generated from the sale      |
-| `region`       | Region where the sale occurred       |
-| `customer`     | Name or ID of the customer           |
-| `quantity`     | Quantity of product sold             |
+| `id`           | Sales record ID (Primary Key)        |
+| `product_name` | Name of the product sold             |
+| `revenue`      | Revenue generated from the sale      |
+| `region`       | Region where the sale occurred       |
+| `customer`     | Name or ID of the customer           |
+| `quantity`     | Quantity of product sold             |
 
 ---
 
 ## 💡 Features
 
 - 🗣️ **Natural Language Interface**  
-  Ask questions like “What is the total revenue by region?” or “Top 5 most expensive products”.
+   Ask questions like “What is the total revenue by region?” or “Top 5 most expensive products”.
 
-- ⚡ **SQL Generation Engine**  
-  Converts plain English to executable SQL queries.
+- ⚙️ **SQL Query Engine**  
+   Converts plain English to fully functional SQL statements.
 
-- 📊 **Visualization-Ready**  
-  Outputs are formatted for bar, pie, line, or scatter plots.
+- 📈 **Data Visualization Ready**  
+   Responses can be passed directly into Chart.js, D3.js, or Tableau.
 
-- ✅ **Single Table Queries Supported**  
-  JOINs are currently not supported — keeps performance high and logic simple.
+- ⚡ **Fast Single-Table Queries**  
+   Focuses on single-table queries for simplicity and performance.
 
 ---
 
-## ✅ Example Questions to Try
+## 🧪 Example Queries
 
-### 🔹 `prods` Table
-- What is the average cost price for each category?
-- List all products with a cost price above 1000.
-- Show number of products in each category.
+### `prods`
+- "List all products with a cost price above 1000"
+- "Show number of products in each category"
+- "What is the average cost price for each category?"
 
-### 🔹 `customer` Table
-- How many customers joined in 2023?
-- Show customer count grouped by type.
-- List customers whose names start with 'S'.
+### `customer`
+- "How many customers joined in 2023?"
+- "List customers whose names start with 'S'"
+- "Show customer count grouped by type"
 
-### 🔹 `sales` Table
-- Show total revenue by region.
-- Which products were sold more than 50 times?
-- What are the top 5 products by total revenue?
+### `sales`
+- "Show total revenue by region"
+- "Which products were sold more than 50 times?"
+- "What are the top 5 products by total revenue?"
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Node.js / Express** — Backend server
-- **Natural Language Processing** — Custom logic or 3rd-party NLU service
-- **SQLite / MySQL / PostgreSQL** — SQL-compliant database
-- **Optional**: Chart.js or D3.js for frontend data visualization
+- **Backend:** Node.js + Express  
+- **Database:** SQLite / MySQL / PostgreSQL (SQL-compliant)  
+- **Natural Language Engine:** Custom logic or NLU APIs  
+- **Visualization (Optional):** Chart.js / D3.js  
+- **Environment:** Cross-platform, lightweight, REST-ready
 
 ---
 
-## 🚀 How to Run
+## 🚀 Getting Started
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/yourusername/sql-chatbot.git
 cd sql-chatbot
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Start the server
+# 3. Start the server
 node server.js
